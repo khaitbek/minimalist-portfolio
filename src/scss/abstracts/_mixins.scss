@@ -1,0 +1,28 @@
+@mixin retina() {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    /* retina images */
+    @content;
+  }
+}
+
+@mixin defaultBtn($padding:0, $background:transparent, $color:#fff, $border:2px solid #000){
+  padding: $padding;
+  background-color: $background;
+  color: $color;
+  border: $border;
+}
+
+@mixin defaultHover($transition){
+  transition: $transition;
+}
+
+@mixin defaultButtonHover($background:transparent, $color:#fff, $border:2px solid #000) {
+  background-color: $background;
+  color: $color;
+  border: $border;
+}

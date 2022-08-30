@@ -1,0 +1,27 @@
+{
+  "name": "sass-template",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "run:html": "npx -p parcel parcel src/views/index.html",
+    "build:html": "npx -p parcel parcel build src/views/index.html",
+    "watch:sass": "sass --watch src/scss:public/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaitbek/sass-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khaitbek/sass-template/issues"
+  },
+  "homepage": "https://github.com/khaitbek/sass-template#readme",
+  "dependencies": {
+    "parcel": "^2.7.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0"
+  }
+}
