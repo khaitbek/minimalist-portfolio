@@ -1,3 +1,5 @@
+@use "media_queries" as media;
+
 @mixin retina() {
   @media only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (min--moz-device-pixel-ratio: 2),
@@ -10,19 +12,105 @@
   }
 }
 
-@mixin defaultBtn($padding:0, $background:transparent, $color:#fff, $border:2px solid #000){
-  padding: $padding;
-  background-color: $background;
+@mixin customText(
+  $fz: var(--fz-100),
+  $fw: 400,
+  $lh: var(--lh-100),
+  $ls: 0,
+  $color: var(--clr-dark-100),
+  $ff: var(--ff-main)
+) {
+  margin: 0;
+  font-size: $fz;
+  line-height: $lh;
+  letter-spacing: $ls;
   color: $color;
-  border: $border;
+  font-family: $ff;
+  @if $ls != 0 {
+    letter-spacing: #{$ls}px;
+  }
 }
 
-@mixin defaultHover($transition){
+@mixin heading-100(
+  $fz: var(--fz-600),
+  $fw: var(--fw-100),
+  $lh: var(--lh-400),
+  $ls: -0.5px,
+  $color: var(--clr-dark-100),
+  $ff: var(--ff-primary)
+) {
+  // font-size: var(--fz-600);
+  // font-weight: var(--fw-100);
+  // line-height: var(--lh-400);
+  // letter-spacing: -0.5px;
+  // color: var(--clr-dark-100);
+  // font-family: var(--ff-primary);
+  @include customText($fz, $fw, $lh, $ls, $color, $ff);
+}
+
+@mixin heading-200(
+  $fz: var(--fz-500),
+  $fw: var(--fw-100),
+  $lh: var(--lh-300),
+  $ls: -0.3px,
+  $color: var(--clr-dark-100),
+  $ff: var(--ff-primary)
+) {
+  // font-size: var(--fz-500);
+  // font-weight: var(--fw-100);
+  // line-height: var(--lh-300);
+  // letter-spacing: -0.3px;
+  // color: var(--clr-dark-100);
+  // font-family: var(--ff-primary);
+  @include customText($fz, $fw, $lh, $ls, $color, $ff);
+}
+
+@mixin paragraph-100(
+  $fz: var(--fz-400),
+  $fw: 400,
+  $lh: var(--lh-200),
+  $ls: 0,
+  $color: var(--clr-dark-100),
+  $ff: var(--ff-main)
+) {
+  @include customText($fz, $fw, $lh, $ls, $color, $ff);
+}
+
+@mixin paragraph-100(
+  $fz: var(--fz-300),
+  $fw: 400,
+  $lh: var(--lh-200),
+  $ls: 0,
+  $color: var(--clr-dark-100),
+  $ff: var(--ff-main)
+) {
+  @include customText($fz, $fw, $lh, $ls, $color, $ff);
+}
+
+
+
+@mixin defaultHover($transition) {
   transition: $transition;
 }
 
-@mixin defaultButtonHover($background:transparent, $color:#fff, $border:2px solid #000) {
-  background-color: $background;
-  color: $color;
-  border: $border;
+@mixin defaultButtonHover(
+  $background: transparent,
+  $color: #fff,
+  $border: 2px solid #000
+) {
+  &:hover{
+    background-color: $background;
+    color: $color;
+    border: $border;
+    @include defaultHover(all 300ms ease-in-out);
+    
+  }
+}
+
+@mixin mq($key){
+  $size:map-get(media.$sizes,$key);
+
+  @media only screen and (min-width:$size) {
+    @content;
+  }
 }

@@ -1,0 +1,24 @@
+.custom-input{
+    font-size: var(--fz-200);
+    line-height: var(--lh-200);
+    color: var(--clr-dark-200);
+    &::placeholder{
+        color: var(--clr-dark-200);
+    };
+    &:not(:placeholder-shown):invalid{
+        border-color: var(--clr-red-100);
+    }
+    &:active{
+        border-color: var(--clr-cyan-100);
+    }
+    background-color: #33323d18;
+    border: 1px solid transparent;
+}
+
+.form-input{
+    padding: 9px 16px;
+}
+
+.form-textarea{
+    padding: 9px 16px;
+}

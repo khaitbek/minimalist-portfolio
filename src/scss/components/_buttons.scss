@@ -1,0 +1,17 @@
+@use "../abstracts/mixins";
+
+.primary-btn{
+    padding: 17px;
+    @include mixins.customText(var(--fz-100),400,var(--lh-100),2,#fff);
+    text-align: center;
+    background-color: var(--clr-dark-200);
+    @include mixins.defaultButtonHover(var(--clr-success-100),#fff,none);
+}
+
+.secondary-btn{
+    padding: 17px;
+    text-align: center;
+    border: 1px solid var(--clr-dark-200);
+    color: var(--clr-dark-200);
+    @include mixins.defaultButtonHover(var(--clr-dark-200),#fff,1px solid var(--clr-dark-200));
+}

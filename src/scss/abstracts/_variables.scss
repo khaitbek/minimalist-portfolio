@@ -1,1 +1,37 @@
+@use "../base/colors";
+@use "../base/typography" as typo;
+@use "../abstracts/mixins";
 
+:root {
+  @each $type, $colorName in colors.$colors {
+    @each $prop, $value in $colorName {
+      @each $level, $color in $value {
+        --clr-#{$prop}-#{$level}: #{$color};
+      }
+    }
+  }
+
+  @each $level, $size in typo.$font-sizes {
+    --fz-#{$level}: #{$size};
+  }
+
+  @each $level, $weight in typo.$font-weights {
+    --fw-#{$level}: #{$weight};
+  }
+
+  @each $level, $height in typo.$line-heights {
+    --lh-#{$level}: #{$height};
+  }
+
+  @each $type, $name in typo.$fonts {
+    --ff-#{$type}: "#{$name}";
+  }
+
+  --container-padding: 32px;
+}
+
+@include mixins.mq(tablet) {
+  :root {
+    --container-padding: 40px;
+  }
+}

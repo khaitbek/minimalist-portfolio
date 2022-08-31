@@ -1,0 +1,42 @@
+@use "../abstracts/mixins";
+
+.site-footer{
+    padding-block: 56px;
+    background-color: var(--clr-dark-200);
+}
+
+.site-footer__wrapper{
+    display: grid;
+    grid-row-gap: 40px;
+    place-items: center;
+    text-align: center;
+}
+
+.site-footer__list{
+    display: grid;
+    grid-row-gap: 32px;
+}
+
+.social-list{
+    display: flex;
+    align-items: center;
+}
+.social-list__item:not(:first-child){
+    margin-left: 16px;
+}
+.site-footer__link{
+    color: #fff;
+}
+
+@include mixins.mq(tablet){
+    .site-footer__wrapper{
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+    }
+    .site-footer__list{
+        grid-auto-flow: column;
+        grid-column-gap: 32px;
+        place-self: flex-start;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,127 @@
+
+@use "../abstracts/mixins";
+.site-header{
+    padding-block: 32px 40px;
+}
+
+.site-header__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger{
+    position: relative;
+    display: grid;
+    grid-gap: 5px;
+}
+
+.hamburger.toggleNav .line:nth-child(1){
+    position: absolute;
+    transform: rotate(135deg);
+}
+
+.hamburger.toggleNav .line:nth-child(2){
+    transform: scale(0);
+}
+
+.hamburger.toggleNav .line:nth-child(3){
+    position: absolute;
+    transform: rotate(-135deg);
+}
+
+.line{
+    width: 24px;
+    height: 1px;
+    background-color: var(--clr-dark-200);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigation{
+    position: absolute;
+    z-index: 1;
+    top: 88px;
+    right: 29px;
+    display: none;
+    max-width: 230px;
+    padding: 40px;
+    text-align: center;
+    opacity: 0;
+    background-color: var(--clr-dark-200);
+    transform: translateX(200%);
+    animation: slideOut 0.8s ease-in-out forwards;
+}
+
+.navigation.show{
+    animation: slideIn 0.8s ease-in-out forwards;
+    display: grid;
+}
+
+.navigation__list{
+    display: grid;
+    grid-row-gap: 32px;
+}
+
+.navigation__link{
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+
+@include mixins.mq(tablet){
+    .site-header{
+        padding-block: 64px 47px;
+    }
+    .hamburger{
+        display: none;
+    }
+    .navigation{
+        position: static;
+        inset: unset;
+        display: block;
+        max-width: unset;
+        padding: 0;
+        opacity: 1;
+        background-color: transparent;
+        transform: none;
+        animation: none;
+    }
+
+    .navigation__list{
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation__item:not(:first-child){
+        margin-left: 42px;
+    }
+
+    .navigation__link{
+        color: var(--clr-dark-200);
+    }
+
+    .navigation__link--active{
+        color: var(--clr-success-100);
+    }
+}
+
+@include mixins.mq(laptop){
+    .site-header{
+        padding-bottom: 54px;
+    }
+}
+
+@keyframes slideIn{
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut{
+    100%{
+        opacity: 0;
+        transform: translateX(200%);
+    }
+}

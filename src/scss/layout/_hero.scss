@@ -1,0 +1,111 @@
+@use "../abstracts/mixins";
+
+.hero {
+  position: relative;
+  margin-bottom: 96px;
+}
+
+.hero__bg{
+    position: relative;
+    height: 311px;
+    max-height: 600px;
+    margin-bottom: 24px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-width: 1110px;
+        bottom: 50%;
+        height: 100%;
+        max-height: 600px;
+        background-image: url("./images/hero.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  grid-row-gap: 32px;
+  place-items: start;
+  max-width: 320px;
+  background-color: #fff;
+}
+
+
+
+@media only screen and (min-width: 420px) {
+  .hero__bg {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .hero__bg {
+    height: 420px;
+    background-position: bottom center;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .hero__bg {
+    height: 480px;
+    background-position: center center;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .hero__bg {
+    height: 500px;
+    background-image: url("./images/hero-tablet.jpg");
+
+  }
+}
+
+@include mixins.mq(tablet) {
+    .hero__inner {
+      max-width: 514px;
+      padding-top: 56px;
+      padding-right: 56px;
+    }
+  .hero__bg {
+    height: 600px;
+    
+  }
+  .hero__bg::before{
+    background-image: url("./images/hero-tablet.jpg");
+    background-position: top 0 bottom 0;
+  }
+  .hero__inner {
+    position: absolute;
+    padding-top: 56px;
+    padding-right: 56px;
+    bottom: 0;
+  }
+}
+@media only screen and (min-width: 890px) {
+    .hero__bg {
+        height: 600px;
+        background-position:center top;
+    }
+  }
+@media only screen and (min-width: 968px) {
+  .hero__bg {
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .hero__bg::before {
+    background-image: url("./images/hero-desktop.jpg");
+    background-position: center center;
+  }
+  .hero__inner{
+    max-width: 445px;
+    max-height: 360px;
+  }
+  .hero__title{
+  }
+}

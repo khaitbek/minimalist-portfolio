@@ -1,0 +1,38 @@
+@use "../components/buttons";
+@use "../components/inputs";
+@use "../base/colors";
+@use "../base/typography" as typo;
+
+@each $type, $colorName in colors.$colors{
+    @each $prop, $value in $colorName{
+        @each $level, $color in $value{
+            .clr-#{$prop}-#{$level}{
+                color: #{$color}
+            };
+        }
+    }
+}
+
+@each $level, $size in typo.$font-sizes{
+    .fz-#{$level}{
+        font-size: #{$size};
+    };
+}
+
+@each $level, $weight in typo.$font-weights{
+    .fw-#{$level}{
+        font-weight: #{$weight};
+    };
+}
+
+@each $level, $height in typo.$line-heights{
+    .lh-#{$level}{
+        line-height: #{$height};
+    };
+}
+
+@each $type, $name in typo.$fonts{
+    .ff-#{$type}{
+        font-family: "#{$name}";
+    };
+}

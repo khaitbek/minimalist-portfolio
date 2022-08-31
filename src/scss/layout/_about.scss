@@ -1,0 +1,61 @@
+@use "../abstracts/mixins";
+
+.about {
+  padding-block: 32px 51px;
+}
+
+.about__wrapper {
+  display: grid;
+  place-content: center;
+}
+
+.about__img {
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.about__inner {
+  max-width: 320px;
+  margin-inline: auto;
+  padding-block: 32px 51px;
+  border-top: 1px solid #33323d26;
+  border-bottom: 1px solid #33323d26;
+}
+
+.about__title {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.about__text {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+@include mixins.mq(tablet) {
+  .about__wrapper {
+    grid-template-columns: 40% 2fr;
+    grid-column-gap: 69px;
+  }
+
+  .about__inner {
+    padding-block: 50px 46px;
+  }
+
+  .about__img {
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+}
+
+@include mixins.mq(laptop) {
+  .about__img {
+    width: 540px;
+    max-height: 600px;
+  }
+
+  .about__inner {
+    max-width: 350px;
+  }
+}

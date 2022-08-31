@@ -1,7 +1,20 @@
-$primary:(
-    100,
-    200,
-    300,
-    400.
-    500
-)
+$colors: (
+  primary: (
+    success: (
+      100: #5fb4a2,
+    ),
+    dark: (
+      100: #203a4c,
+      200: #33323d,
+    ),
+  ),
+  secondary:(
+    light: (
+      100: #fafafa,
+      200: #eaeaeb,
+    ),
+    danger: (
+      300: #f43030,
+    ),
+  )
+);
