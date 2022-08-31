@@ -1,7 +1,7 @@
 @use "../abstracts/mixins";
 
 .about {
-  padding-block: 32px 51px;
+  padding-block: 96px 51px;
 }
 
 .about__wrapper {
@@ -33,7 +33,7 @@
 }
 
 @include mixins.mq(tablet) {
-  .about__wrapper {
+  .about__wrapper:not(.about--contact .about__wrapper) {
     grid-template-columns: 40% 2fr;
     grid-column-gap: 69px;
   }

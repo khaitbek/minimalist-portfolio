@@ -1,0 +1,53 @@
+@use "../abstracts/mixins";
+
+.about--contact .about__wrapper {
+  padding-top: 32px;
+  border-top: 1px solid #33323d26;
+}
+.about--contact .about__inner {
+  max-width: 100%;
+  padding-block: 0 32px;
+  border-top: 0;
+}
+
+.about--contact .about__title {
+  margin-bottom: 24px;
+}
+
+.about--contact .social-list {
+  margin: 0;
+}
+
+.about--form {
+  padding-bottom: 109px;
+}
+
+.about--form .about__wrapper {
+  border-top: 0;
+}
+
+.about--form .about__inner {
+  max-width: 100%;
+  padding-block: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.form-btn{
+  width: max-content;
+}
+
+@include mixins.mq(laptop) {
+  .about--contact .about__wrapper {
+    grid-template-columns: 40% 2fr;
+    grid-column-gap: 69px;
+  }
+
+  .about--form .about__wrapper{
+    grid-template-columns: 40% 2fr;
+  }
+
+  .about--form .about__inner{
+    width: 200%;
+  }
+}

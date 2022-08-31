@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/main.scss">
+    <script src="../js/nav.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__wrapper">
+                <a class="site-logo" href="./index.html">
+                    <img width="60" height="32" class="site-logo__img" src="../scss/images/logo_primary.svg"
+                        alt="Minimalist Logo">
+                </a>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <nav class="navigation" id="primaryNavigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a class="navigation__link fz-100 lh-100 clr-dark-200" href="./index.html">
+                                HOME
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link fz-100 lh-100 clr-dark-200" href="#">
+                                PORTFOLIO
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link navigation__link--active fz-100 lh-100 clr-dark-200" href="#">
+                                CONTACT ME
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <section class="about about--contact">
+            <div class="container">
+                <div class="about__wrapper">
+                    <h2 class="about__title fw-100 fz-500 lh-300 clr-dark-200 ff-secondary">Get in touch</h2>
+
+                    <div class="about__inner">
+
+                        <p class="about__text fz-400 lh-200 clr-dark-200">
+                            I’d love to hear about what you’re working on and how I could help. I’m currently looking
+                            for a new role and am open to a wide range of opportunities. My preference would be to find
+                            a position in a company in London. But I’m also happy to hear about opportunites that don’t
+                            fit that description. I’m a hard-working and positive person who will always approach each
+                            task with a sense of purpose and attention to detail. Please do feel free to check out my
+                            online profiles below and get in touch using the form.
+                        </p>
+
+                        <ul class="about__social-list social-list">
+                            <li class="social-list__item">
+                                <a class="social-list__link fz-100 lh-100" href="#">
+                                    <img class="social-list__img" width="25" height="24"
+                                        src="../scss/images/github-dark.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social-list__item">
+                                <a class="social-list__link fz-100 lh-100" href="#">
+                                    <img class="social-list__img" width="25" height="24"
+                                        src="../scss/images/twitter-dark.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social-list__item">
+                                <a class="social-list__link fz-100 lh-100" href="#">
+                                    <img class="social-list__img" width="25" height="24"
+                                        src="../scss/images/linkedin-dark.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about about--form">
+            <div class="container">
+                <div class="about__wrapper">
+                    <h2 class="about__title fw-100 fz-500 lh-300 clr-dark-200 ff-secondary">Contact Me</h2>
+                    <div class="about__inner">
+                        <form class="about__form" autocomplete="off" action="https://echo.htmlacademy.ru/courses" method="post">
+                            <label class="about__label form-label fw-100 fz-200 lh-200 clr-dark-200">
+                                Name
+                                <input class="about__input custom-input" name="user_name" type="text"
+                                    placeholder="Jane Appleseed" minlength="3" maxlength="20">
+                                
+                                <span class="about__span form-error clr-danger-100">
+                                    This field is required
+                                </span>
+                            </label>
+                            <label class="about__label form-label fw-100 fz-200 lh-200 clr-dark-200">
+                                Email Address
+                                <input class="about__input custom-input" name="user_email" type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$"
+                                    placeholder="Jemail@example.com" required>
+                                
+                                <span class="about__span form-error clr-danger-100">
+                                    This field is required
+                                </span>
+                            </label>
+                            <label class="about__label form-label fw-100 fz-200 lh-200 clr-dark-200">
+                                Message
+                                <textarea class="about__input custom-textarea" name="user_message"
+                                placeholder="How can i help" minlength="10" maxlength="255" cols="30" rows="10" required></textarea>
+                                
+                                <span class="about__span form-error clr-danger-100">
+                                    This field is required
+                                </span>
+                            </label>
+
+                            <button class="about__btn form-btn primary-btn" type="submit">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer start -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__wrapper">
+                <a class="site-logo" href="#">
+                    <img width="60" height="32" class="site-logo__img" src="../scss/images/logo_light.svg"
+                        alt="Minimalist Logo">
+                </a>
+                <ul class="site-footer__list">
+                    <li class="site-footer__item">
+                        <a class="site-footer__link" href="./index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li class="site-footer__item">
+                        <a class="site-footer__link" href="#">
+                            PORTFOLIO
+                        </a>
+                    </li>
+                    <li class="site-footer__item">
+                        <a class="site-footer__link" href="#">
+                            CONTACT ME
+                        </a>
+                    </li>
+                </ul>
+                <ul class="site-footer__social-list social-list">
+                    <li class="social-list__item">
+                        <a class="social-list__link fz-100 lh-100" href="#">
+                            <img class="social-list__img" width="25" height="24" src="../scss/images/github.svg" alt="">
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link fz-100 lh-100" href="#">
+                            <img class="social-list__img" width="25" height="24" src="../scss/images/twitter.svg"
+                                alt="">
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a class="social-list__link fz-100 lh-100" href="#">
+                            <img class="social-list__img" width="25" height="24" src="../scss/images/linkedin.svg"
+                                alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+</body>
+
+</html>

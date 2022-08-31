@@ -43,13 +43,14 @@
     top: 88px;
     right: 29px;
     display: none;
+    width: 223px;
     max-width: 230px;
-    padding: 40px;
-    text-align: center;
+    padding: 20px;
+    // text-align: center;
     opacity: 0;
     background-color: var(--clr-dark-200);
     transform: translateX(200%);
-    animation: slideOut 0.8s ease-in-out forwards;
+    display: none;
 }
 
 .navigation.show{
@@ -57,17 +58,29 @@
     display: grid;
 }
 
+.navigation.closing{
+    animation: slideOut 0.8s ease-in-out forwards;
+}
+
 .navigation__list{
     display: grid;
     grid-row-gap: 32px;
 }
 
+.navigation__item{
+    text-align: center;
+    max-width: 100%;
+}
+
 .navigation__link{
+    width: max-content;
     letter-spacing: 2px;
     color: #fff;
 }
 
-
+.navigation__link--active{
+    color: var(--clr-success-100);
+}
 
 @include mixins.mq(tablet){
     .site-header{
@@ -80,12 +93,13 @@
         position: static;
         inset: unset;
         display: block;
+        width: unset;
         max-width: unset;
         padding: 0;
         opacity: 1;
         background-color: transparent;
         transform: none;
-        animation: none;
+        overflow: hidden;
     }
 
     .navigation__list{
@@ -120,6 +134,10 @@
 }
 
 @keyframes slideOut{
+    0%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
     100%{
         opacity: 0;
         transform: translateX(200%);
