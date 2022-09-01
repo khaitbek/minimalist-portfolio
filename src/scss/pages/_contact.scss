@@ -23,6 +23,7 @@
 }
 
 .about--form .about__wrapper {
+  display: block;
   border-top: 0;
 }
 
@@ -43,7 +44,16 @@
     grid-column-gap: 69px;
   }
 
+  .about--contact .about__inner{
+    border-bottom: 0;
+  }
+
+  .about--contact .about__wrapper{
+    border-bottom: 1px solid #33323d26;
+  }
+
   .about--form .about__wrapper{
+    display: grid;
     grid-template-columns: 40% 2fr;
   }
 
